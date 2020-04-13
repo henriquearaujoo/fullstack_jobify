@@ -3,13 +3,14 @@ const app = express();
 const bodyParser = require('body-parser');
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
-const path = require('path')
+const path = require('path');
 const dbConnection = sqlite.open({ filename: path.resolve(__dirname, 'banco.db'), driver: sqlite3.Database }, { Promise });
 const port = process.env.PORT || 3000
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', async(request, response) => {
     const db = await dbConnection;
