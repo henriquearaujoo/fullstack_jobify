@@ -1,22 +1,22 @@
 {
-  "name": "jobify",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "jobify",
-    "job"
-  ],
-  "author": "Henrique Araújo",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^3.0.2",
-    "express": "^4.17.1",
-    "sqlite": "^4.0.6",
-    "sqlite3": "^4.1.1"
-  }
+    "name": "jobify",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [
+        "jobify",
+        "job"
+    ],
+    "author": "Henrique Araújo",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.0.2",
+        "express": "^4.17.1",
+        "sqlite": "^4.0.6",
+        "sqlite3": "^4.1.1"
+    }
 }
