@@ -5,6 +5,8 @@ const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 const dbConnection = sqlite.open({ filename: 'banco.db', driver: sqlite3.Database }, { Promise });
 
+const port = process.env.PORT || 3000
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -98,7 +100,7 @@ const init = async() => {
 
 init();
 
-app.listen(3000, (err) => {
+app.listen(port, (err) => {
     if (err) {
         console.log('Nao foi possivel iniciar o servidor');
     } else {
