@@ -4,14 +4,17 @@ const bodyParser = require('body-parser');
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 const path = require('path');
-const dbConnection = sqlite.open({ filename: path.resolve(__dirname, 'banco.db'), driver: sqlite3.Database }, { Promise });
+const dbConnection = sqlite.open({
+    filename: path.resolve(__dirname, 'banco.db'),
+    driver: sqlite3.Database
+}, { Promise });
 const port = process.env.PORT || 3000
 
 app.use('/admin', (req, res, next) => {
     if (req.hostname === 'localhost') {
         next();
     } else {
-        res.send('Sem premissão');
+        res.send('Sem permissão');
     }
 })
 
